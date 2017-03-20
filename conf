@@ -7,19 +7,19 @@ else
 	if echo $(id) |grep sudo > /dev/null
 	then
 	clear
-	echo -e "\033[1;37mVoce não é root"
-	echo -e "\033[1;37mSeu usuario esta no grupo sudo"
-	echo -e "\033[1;37mPara virar root execute \033[1;31msudo su\033[1;37m ou execute \033[1;31msudo $0\033[0m"
+	echo -e "\033[1;37mUsted no es root"
+	echo -e "\033[1;37mSu usuario no esta en el grupo sudo"
+	echo -e "\033[1;37mPara cambiar a root ejecuta \033[1;31msudo su\033[1;37m o ejecuta \033[1;31msudo $0\033[0m"
 	exit
 	else
 	clear
-	echo -e "Vc nao esta como usuario root, nem com seus direitos (sudo)\nPara virar root execute \033[1;31msu\033[0m e digite sua senha root"
+	echo -e "No esta como usuario root, ni con permiso(sudo)\nPara cambiar a root ejecuta \033[1;31msu\033[0m y digita su contraseña root"
 	exit
 	fi
 fi
 
 cat -n /etc/issue |grep 1 |cut -d' ' -f6,7,8 |sed 's/1//' |sed 's/	//' > /etc/so 
-echo -e "\033[1;35mPara a instalação correta é preciso o ip.
+echo -e "\033[1;35mPara la instalacion correta es necesaria la ip.
 Digite o ip\033[0m"
 read -p ": " ip
 
@@ -79,7 +79,7 @@ www.recargafacil.claro.com.br
 }
 
 if cat /etc/so |grep -i ubuntu |grep 16 1> /dev/null 2> /dev/null ; then
-echo -e "\033[1;31mConfigurando, Aguarde...\033[0m"
+echo -e "\033[1;31mConfigurando, Espera...\033[0m"
 apt-get update 1> /dev/null 2> /dev/null
 apt-get install -y squid3 1> /dev/null 2> /dev/null
 
@@ -108,17 +108,17 @@ addhost
 service squid restart 1> /dev/null 2> /dev/null
 sleep 5
 clear
-echo -e "\033[1;36mINSTALAÇÃO E CONFIGURAÇÃO CONCLUÍDA.\033[0m"
-echo -e "\033[1;37m>>>>>\033[1;36mScript criado por Luiz.\033[0m"
-echo -e "\033[1;37m>>>>>\033[01;36mSeu ip:\033[1;31m $ip"
-echo -e "\033[1;37m>>>>>\033[1;36mSQUID CONFIGURADO NAS PORTAS:\033[1;31m 80, 8080, 8799, 3128\033[0m"
-echo -e "\033[1;37m>>>>>\033[1;36mSSH NAS PORTAS: \033[1;31m443, 22\033[0m"
-echo -e "\033[1;37m>>>>>\033[1;36mSSH NOS IPS: \033[1;31m$ip, localhost, 127.0.0.1\033[0m"
+echo -e "\033[1;36mINSTALACION Y CONFIGURACION TERMINADA.\033[0m"
+echo -e "\033[1;37m>>>>>\033[1;36mScript creado por Luiz.\033[0m"
+echo -e "\033[1;37m>>>>>\033[01;36mTu ip:\033[1;31m $ip"
+echo -e "\033[1;37m>>>>>\033[1;36mSQUID CONFIGURADO EN LOS PUERTOS:\033[1;31m 80, 8080, 8799, 3128\033[0m"
+echo -e "\033[1;37m>>>>>\033[1;36mSSH EN LOS PUERTOS: \033[1;31m443, 22\033[0m"
+echo -e "\033[1;37m>>>>>\033[1;36mSSH EN LAS IPS: \033[1;31m$ip, localhost, 127.0.0.1\033[0m"
 exit 0
 fi
 
 if cat /etc/so |grep -i ubuntu 1> /dev/null 2> /dev/null ; then
-echo -e "\033[1;31mConfigurando, Aguarde...\033[0m"
+echo -e "\033[1;31mConfigurando, ESPERE...\033[0m"
 apt-get update 1> /dev/null 2> /dev/null
 apt-get install -y squid3 1> /dev/null 2> /dev/null
 
@@ -147,17 +147,17 @@ addhost
 
 sleep 5
 clear
-echo -e "\033[1;36mINSTALAÇÃO E CONFIGURAÇÃO CONCLUÍDA.\033[0m"
-echo -e "\033[1;37m>>>>>\033[1;36mScript criado por Luiz.\033[0m"
-echo -e "\033[1;37m>>>>>\033[01;36mSeu ip:\033[1;31m $ip"
-echo -e "\033[1;37m>>>>>\033[1;36mSQUID CONFIGURADO NAS PORTAS:\033[1;31m 80, 8080, 8799, 3128\033[0m"
-echo -e "\033[1;37m>>>>>\033[1;36mSSH NAS PORTAS: \033[1;31m443, 22\033[0m"
-echo -e "\033[1;37m>>>>>\033[1;36mSSH NOS IPS: \033[1;31m$ip, localhost, 127.0.0.1\033[0m"
+echo -e "\033[1;36mINSTALACION Y CONFIGURACION TERMINADA.\033[0m"
+echo -e "\033[1;37m>>>>>\033[1;36mScript creado por Luiz.\033[0m"
+echo -e "\033[1;37m>>>>>\033[01;36mTu ip:\033[1;31m $ip"
+echo -e "\033[1;37m>>>>>\033[1;36mSQUID CONFIGURADO EN LOS PUERTOS:\033[1;31m 80, 8080, 8799, 3128\033[0m"
+echo -e "\033[1;37m>>>>>\033[1;36mSSH EN LOS PUERTOS: \033[1;31m443, 22\033[0m"
+echo -e "\033[1;37m>>>>>\033[1;36mSSH EN LAS IPS: \033[1;31m$ip, localhost, 127.0.0.1\033[0m"
 exit 0
 fi
 
 if cat /etc/so |grep -i centos 1> /dev/null 2> /dev/null ; then
-echo -e "\033[01;31mConfigurando, Aguarde...\033[0m"
+echo -e "\033[01;31mConfigurando, ESPERE...\033[0m"
 yum -y update 1> /dev/null 2> /dev/null
 yum install -y squid 1> /dev/null 2> /dev/null
 
@@ -186,17 +186,17 @@ addhost
 
 sleep 5
 clear
-echo -e "\033[1;36mINSTALAÇÃO E CONFIGURAÇÃO CONCLUÍDA.\033[0m"
-echo -e "\033[1;37m>>>>>\033[1;36mScript criado por Luiz.\033[0m"
-echo -e "\033[1;37m>>>>>\033[01;36mSeu ip:\033[1;31m $ip"
-echo -e "\033[1;37m>>>>>\033[1;36mSQUID CONFIGURADO NAS PORTAS:\033[1;31m 80, 8080, 8799, 3128\033[0m"
-echo -e "\033[1;37m>>>>>\033[1;36mSSH NAS PORTAS: \033[1;31m443, 22\033[0m"
-echo -e "\033[1;37m>>>>>\033[1;36mSSH NOS IPS: \033[1;31m$ip, localhost, 127.0.0.1\033[0m"
+echo -e "\033[1;36mINSTALACION Y CONFIGURACION TERMINADA.\033[0m"
+echo -e "\033[1;37m>>>>>\033[1;36mScript creado por Luiz.\033[0m"
+echo -e "\033[1;37m>>>>>\033[01;36mTu ip:\033[1;31m $ip"
+echo -e "\033[1;37m>>>>>\033[1;36mSQUID CONFIGURADO EN LOS PUERTOS:\033[1;31m 80, 8080, 8799, 3128\033[0m"
+echo -e "\033[1;37m>>>>>\033[1;36mSSH EN LOS PUERTOS: \033[1;31m443, 22\033[0m"
+echo -e "\033[1;37m>>>>>\033[1;36mSSH EN LAS IPS: \033[1;31m$ip, localhost, 127.0.0.1\033[0m"
 exit 0
 fi
 
 if cat /etc/so |grep -i debian 1> /dev/null 2> /dev/null ; then
-echo -e "\033[01;31mConfigurando, Aguarde...\033[0m"
+echo -e "\033[01;31mConfigurando, ESPERE...\033[0m"
 apt-get update 1> /dev/null 2> /dev/null
 apt-get install -y squid3 1> /dev/null 2> /dev/null
 service apache2 stop 1> /dev/null 2> /dev/null
@@ -225,19 +225,19 @@ addhost
 
 sleep 5
 clear
-echo -e "\033[1;36mINSTALAÇÃO E CONFIGURAÇÃO CONCLUÍDA.\033[0m"
-echo -e "\033[1;37m>>>>>\033[1;36mScript criado por Luiz.\033[0m"
-echo -e "\033[1;37m>>>>>\033[01;36mSeu ip:\033[1;31m $ip"
-echo -e "\033[1;37m>>>>>\033[1;36mSQUID CONFIGURADO NAS PORTAS:\033[1;31m 80, 8080, 8799, 3128\033[0m"
-echo -e "\033[1;37m>>>>>\033[1;36mSSH NAS PORTAS: \033[1;31m443, 22\033[0m"
-echo -e "\033[1;37m>>>>>\033[1;36mSSH NOS IPS: \033[1;31m$ip, localhost, 127.0.0.1\033[0m"
+echo -e "\033[1;36mINSTALACION Y CONFIGURACION TERMINADA.\033[0m"
+echo -e "\033[1;37m>>>>>\033[1;36mScript creado por Luiz.\033[0m"
+echo -e "\033[1;37m>>>>>\033[01;36mTu ip:\033[1;31m $ip"
+echo -e "\033[1;37m>>>>>\033[1;36mSQUID CONFIGURADO EN LOS PUERTOS:\033[1;31m 80, 8080, 8799, 3128\033[0m"
+echo -e "\033[1;37m>>>>>\033[1;36mSSH EN LOS PUERTOS: \033[1;31m443, 22\033[0m"
+echo -e "\033[1;37m>>>>>\033[1;36mSSH EN LAS IPS: \033[1;31m$ip, localhost, 127.0.0.1\033[0m"
 exit 0
 fi
 
 
 
 if cat /etc/issue |grep -i kernel 1> /dev/null 2> /dev/null ; then
-echo -e "\033[01;31mConfigurando, Aguarde...\033[0m"
+echo -e "\033[01;31mConfigurando, ESPERE...\033[0m"
 yum -y update 1> /dev/null 2> /dev/null
 yum install -y squid 1> /dev/null 2> /dev/null
 
@@ -266,16 +266,16 @@ addhost
 
 sleep 5
 clear
-echo -e "\033[1;36mINSTALAÇÃO E CONFIGURAÇÃO CONCLUÍDA.\033[0m"
-echo -e "\033[1;37m>>>>>\033[1;36mScript criado por Luiz.\033[0m"
-echo -e "\033[1;37m>>>>>\033[01;36mSeu ip:\033[1;31m $ip"
-echo -e "\033[1;37m>>>>>\033[1;36mSQUID CONFIGURADO NAS PORTAS:\033[1;31m 80, 8080, 8799, 3128\033[0m"
-echo -e "\033[1;37m>>>>>\033[1;36mSSH NAS PORTAS: \033[1;31m443, 22\033[0m"
-echo -e "\033[1;37m>>>>>\033[1;36mSSH NOS IPS: \033[1;31m$ip, localhost, 127.0.0.1\033[0m"
+echo -e "\033[1;36mINSTALACION Y CONFIGURACION TERMINADA.\033[0m"
+echo -e "\033[1;37m>>>>>\033[1;36mScript creado por Luiz.\033[0m"
+echo -e "\033[1;37m>>>>>\033[01;36mTu ip:\033[1;31m $ip"
+echo -e "\033[1;37m>>>>>\033[1;36mSQUID CONFIGURADO EN LOS PUERTOS:\033[1;31m 80, 8080, 8799, 3128\033[0m"
+echo -e "\033[1;37m>>>>>\033[1;36mSSH EN LOS PUERTOS: \033[1;31m443, 22\033[0m"
+echo -e "\033[1;37m>>>>>\033[1;36mSSH EN LAS IPS: \033[1;31m$ip, localhost, 127.0.0.1\033[0m"
 exit
 fi
 
-echo -e "\033[01;31mConfigurando, Aguarde...\033[0m"
+echo -e "\033[01;31mConfigurando, ESPERE...\033[0m"
 
 yum -y update 1> /dev/null 2> /dev/null
 yum install -y squid 1> /dev/null 2> /dev/null
@@ -307,9 +307,9 @@ service squid3 restart > /dev/null 2> /dev/null
 addhost
 sleep 5
 clear
-echo -e "\033[1;36mINSTALAÇÃO E CONFIGURAÇÃO CONCLUÍDA.\033[0m"
-echo -e "\033[1;37m>>>>>\033[1;36mScript criado por Luiz.\033[0m"
-echo -e "\033[1;37m>>>>>\033[01;36mSeu ip:\033[1;31m $ip"
-echo -e "\033[1;37m>>>>>\033[1;36mSQUID CONFIGURADO NAS PORTAS:\033[1;31m 80, 8080, 8799, 3128\033[0m"
-echo -e "\033[1;37m>>>>>\033[1;36mSSH NAS PORTAS: \033[1;31m443, 22\033[0m"
-echo -e "\033[1;37m>>>>>\033[1;36mSSH NOS IPS: \033[1;31m$ip, localhost, 127.0.0.1\033[0m"
+echo -e "\033[1;36mINSTALACION Y CONFIGURACION TERMINADA.\033[0m"
+echo -e "\033[1;37m>>>>>\033[1;36mScript creado por Luiz.\033[0m"
+echo -e "\033[1;37m>>>>>\033[01;36mTu ip:\033[1;31m $ip"
+echo -e "\033[1;37m>>>>>\033[1;36mSQUID CONFIGURADO EN LOS PUERTOS:\033[1;31m 80, 8080, 8799, 3128\033[0m"
+echo -e "\033[1;37m>>>>>\033[1;36mSSH EN LOS PUERTOS: \033[1;31m443, 22\033[0m"
+echo -e "\033[1;37m>>>>>\033[1;36mSSH EN LAS IPS: \033[1;31m$ip, localhost, 127.0.0.1\033[0m"
